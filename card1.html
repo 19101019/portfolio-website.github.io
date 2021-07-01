@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap" rel="stylesheet">
+	
+	<title>My Projects</title>
+</head><style>
+
+
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+    *, *:before, *:after {
+	 box-sizing: border-box;
+}
+ html {
+	 font-size: 18px;
+	 line-height: 1.5;
+	 font-weight: 300;
+	 color: #333;
+	 font-family: "Nunito Sans", sans-serif;
+}
+ body {
+	 margin: 0;
+	 padding: 0;
+	 height: 100vh;
+	 background:url("https://i.gifer.com/JdHm.gif");
+	 background-attachment: fixed;
+}
+
+
+ ::-webkit-scrollbar {
+            width: 13px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #3b3939;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: rgba(199, 172, 172, 0.795);
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgb(12, 178, 255);
+        }
+ .content {
+	 display: flex;
+	 margin: 0 auto;
+	 justify-content: center;
+	 align-items: center;
+	 flex-wrap: wrap;
+	 max-width: 1000px;
+}
+ .heading {
+	 width: 100%;
+	 margin-left: 1rem;
+	 font-size: 4.5rem;
+	 font-weight: lighter;
+	font-family: 'Dela Gothic One', cursive;
+	 text-transform: uppercase;
+	 letter-spacing: 0.1ch;
+	 line-height: 1;
+	 padding-bottom: 0.5em;
+	 color: rgb(255, 255, 255);
+	 position: relative;
+	 margin-top:6rem;
+}
+ .heading:after {
+	 display: block;
+	 content: '';
+	 position: absolute;
+	 width: 260px;
+	 height: 4px;
+	 background: linear-gradient(135deg, #fd3ad3, #f30424);
+	 bottom: 0;
+}
+ .description {
+	 width: 100%;
+	 margin-top: 0;
+	 margin-left: 1rem;
+	 margin-bottom: 3rem;
+}
+ .card {
+	 color: inherit;
+	 cursor: pointer;
+	 width: calc(80% - 2rem);
+	 min-width: calc(80% - 2rem);
+	 height:430px;
+	 min-height: 250px;
+	 perspective: 1000px;
+	 margin: 5rem;
+	 position: relative;
+}
+ @media screen and (max-width: 800px) {
+	 .card {
+		 width: calc(50% - 2rem);
+	}
+}
+ @media screen and (max-width: 500px) {
+	 .card {
+		 width: 100%;
+	}
+}
+ .front, .back {
+	 display: flex;
+	 border-radius: 6px;
+	 background-position: center;
+	 background-size: cover;
+	 text-align: center;
+	 justify-content: center;
+	 align-items: center;
+	 position: absolute;
+	 height: 100%;
+	 width: 100%;
+	 -webkit-backface-visibility: hidden;
+	 backface-visibility: hidden;
+	 transform-style: preserve-3d;
+	 transition: ease-in-out 1500ms;
+}
+ .front {
+	 background-size: cover;
+	 padding: 2rem;
+	 font-size: 2rem;
+	 font-weight: 600;
+	 color: #fff;
+	 font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+	 overflow: hidden;
+	 
+}
+ .front:before {
+	 position: absolute;
+	 display: block;
+	 content: '';
+	 top: 0;
+	 left: 0;
+	 right: 0;
+	 bottom: 0;
+	
+	 
+}
+ .card:hover .front {
+	 transform: rotateY(180deg);
+}
+ .card:nth-child(even):hover .front {
+	 transform: rotateY(-180deg);
+}
+ .back {
+	 background: #fff;
+	 transform: rotateY(-180deg);
+	 padding: 0 2em;
+}
+ .back .button {
+	 background: linear-gradient(135deg, #1a9be6, #1a57e6);
+}
+ .back .button:before {
+	 box-shadow: 0 0 10px 10px rgba(26, 87, 230, 0.25);
+	 background-color: rgba(26, 87, 230, 0.25);
+}
+ .card:hover .back {
+	 transform: rotateY(0deg);
+}
+ .card:nth-child(even) .back {
+	 transform: rotateY(180deg);
+}
+ .card:nth-child(even) .back .button {
+	 background: linear-gradient(135deg, #e61a80, #e61a3c);
+}
+ .card:nth-child(even) .back .button:before {
+	 box-shadow: 0 0 10px 10px rgba(230, 26, 60, 0.25);
+	 background-color: rgba(230, 26, 60, 0.25);
+}
+ .card:nth-child(even):hover .back {
+	 transform: rotateY(0deg);
+}
+ .button {
+	 transform: translateZ(40px);
+	 cursor: pointer;
+	 -webkit-backface-visibility: hidden;
+	 backface-visibility: hidden;
+	 font-weight: bold;
+	 color: #fff;
+	 padding: 0.5em 1em;
+	 border-radius: 100px;
+	 font: inherit;
+	 border: none;
+	 position: relative;
+	 transform-style: preserve-3d;
+	 transition: 300ms ease;
+}
+ .button:before {
+	 transition: 300ms ease;
+	 position: absolute;
+	 display: block;
+	 content: '';
+	 transform: translateZ(-40px);
+	 -webkit-backface-visibility: hidden;
+	 backface-visibility: hidden;
+	 height: calc(100% - 20px);
+	 width: calc(100% - 20px);
+	 border-radius: 100px;
+	 left: 10px;
+	 top: 16px;
+}
+ .button:hover {
+	 transform: translateZ(55px);
+}
+ .button:hover:before {
+	 transform: translateZ(-55px);
+}
+ .button:active {
+	 transform: translateZ(20px);
+}
+ .button:active:before {
+	 transform: translateZ(-20px);
+	 top: 12px;
+}
+ 
+</style>
+<body>
+
+	
+   <div class="content">
+    <h1 class="heading">MY PROJECTS</h1>
+    <p class="description">Check out my latest work. Hope you like it !</p>
+
+
+
+	 </a><a class="card" href="https://github.com/19101019/QR-code">
+        <div class="front" style="background-image: url(qr.png)">
+     
+        </div>
+        <div class="back">
+            <div><h1>The QR Code</h1>
+                <p>QR codes aren't everyone's cup of tea but I quite like them. If I see something I want to remember or check out later, especially when on the road, it's super easy to take a quick picture -- it's much easier than trying to remember a URL and much faster than typing it in on a tiny keyboard. Wandering how to create one? Check out the codes and link your QR code with your favourite site and info... </p>
+                <p>Hats off to our major contributers : <br>NPM,NODEJS<br>ReactJS,Javascript</p><button class="button">Grab the Codes</button>
+            </div>
+        </div>
+	<a class="card" href="https://github.com/19101019/thesoialcomment">
+        <div class="front" style="background-image: url(stock.png)">
+            <p>The React Storybook <br>Stock Market Dashboard</p>
+        </div>
+        <div class="back">
+            <div>
+               <h1>Stock Market Dashboard</h1>
+                <p>Light Blue React Template is world first transparent dashboard built
+					 with Bootstrap 4 and React.My project includes the same tech stacks
+					  but it is more advanced and user friendly It uses Server Side Rendering 
+					  for SEO optimization and Node.js backend to even further speed up your 
+					  development. Light Blue React admin template can be used to create
+					   analytics dashboards, E-Commerce apps, CMS, SASS web apps, CRM,
+					    etc.</p>
+						
+		<button class="button">Give a Look</button>
+            </div>
+        </div>
+     </a><a class="card" href="https://19101019.github.io/dance-in-proverty/">
+        <div class="front" style="background-image: url(bank.png)">
+         <p></p>
+        </div>
+        <div class="back">
+            <div><h1>Child Support</h1>
+                <p>An online donation completely responsive website designed with the help of ReactJS, css, javascript and php  for the nobel cause of the society ie donation for the welfare of needy children belonging to families below BPL .</p>
+                <p>Talking about the project, it has all the required essential features. This project has a donor side, when clicks on Donate button further proceeds to Payment gateway. </p><button class="button">Visit Site</button>
+            </div>
+        </div>
+    </a><a class="card" href="https://19101019.github.io/Granny-s-donuts/">
+        <div class="front" style="background-image: url(bakery.png)">
+        </div>
+        <div class="back">
+            <div><h1>Granny's Donuts</h1>
+                <p>This Ecommerce bakery project is developed using CSS, Bootstrap, and JavaScript. This project has a user side where he/she can view product category and enjoy the taste of Grandma's donuts. Baked with love :)</p>
+                <p></p><button class="button">Visit Site</button>
+            </div>
+        </div>
+  
+    </a>
+	
+	
+	
+	
+	<a class="card" href="https://19101019.github.io/profile_snapshot/">
+        <div class="front" style="background-image: url(cover.png)">
+            
+        </div>
+        <div class="back">
+            <div><h1>Profile snapshot</h1>
+                <p>Wants to dive into deep fun with javascript?? Well, then you are at right place hover over the screen and have fun with completely soaked hands in javascript</p>
+				<p>This is most basic and of the most amazing javascript project. JavaScript has too many design faults to be considered “fun”. Imagine driving a Jeep, but the way the wheels are steered is randomized with every turn of the steering wheel. So are the break and gas pedals, only after every slight acceleration/deceleration.</p>
+                <button class="button">Have fun Here</button>
+            </div>
+        </div>
+    </a>
+	
+	
+	<a class="card" href="https://projectnewtogo.000webhostapp.com/">
+        <div class="front" style="background-image: url(v.png)">
+            
+        </div>
+        <div class="back">
+            <div><h1>NATIONAL VOTERS SERVICE
+DEMO PORTAL</h1>
+                <p>A complete demo clone of our government website of the national voters website</p>
+                <button class="button">Visit site</button>
+            </div>
+        </div>
+    </a>
+    
+
+	
+</div> <a class="card" href="index.html">
+<button class="button" style="margin-left:35%; margin-bottom: 5% ; background-color: #047ff3; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-size: 24px; font-weight:600; ">Let's Get back</button>
+</a></body>
+</html>
